@@ -56,6 +56,12 @@ footer a{color:var(--cy)}
 .card .row a.live{background:#241338;color:#fff;border-color:#241338}
 .card .when{color:#4a3a62}
 .k-security-awareness{--c:#ffa8c9}.k-web-apps{--c:#8fe3ee}.k-mac-tools{--c:#9ef0cb}.k-explainers{--c:#c9b3ff}.k-eriu{--c:#ffe48f}.k-ai{--c:#ffc4a0}.k-more{--c:#a9c4ff}
+
+/* chips match their category pastel */
+.chip{--c:var(--cy);color:var(--c);border-color:var(--c)}
+.chip:hover{color:#fff;background:rgba(255,255,255,.08)}
+.chip[aria-pressed=true]{background:var(--c);border-color:var(--c);color:#241338}
+.chip[data-c="Security awareness"]{--c:#ffa8c9}.chip[data-c="Web apps"]{--c:#8fe3ee}.chip[data-c="Mac tools"]{--c:#9ef0cb}.chip[data-c="Explainers"]{--c:#c9b3ff}.chip[data-c="Eriu"]{--c:#ffe48f}.chip[data-c="AI"]{--c:#ffc4a0}.chip[data-c="More"]{--c:#a9c4ff}
 a:focus-visible,button:focus-visible{outline:2px solid var(--am);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
