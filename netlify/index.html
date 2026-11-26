@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Hosted on Netlify</title>
+<style>
+:root{--ink:#d7e7ea;--mut:#8aa0a6;--line:#1c4850;--cy:#00dbcc}
+*{box-sizing:border-box}
+body{margin:0;background:#06141a;color:var(--ink);font:17px/1.6 'Noto Sans',system-ui,sans-serif}
+main{max-width:760px;margin:0 auto;padding:56px 22px 80px}
+h1{font:700 clamp(32px,6vw,48px)/1.1 'Ubuntu',system-ui,sans-serif;margin:0 0 10px;color:#e8f4f6}
+.lede{color:var(--mut);margin:0 0 36px}
+ul{list-style:none;margin:0;padding:0}
+li{border-top:1px solid var(--line);padding:18px 0}
+li:last-child{border-bottom:1px solid var(--line)}
+h2{font:600 19px/1.3 'Ubuntu',system-ui,sans-serif;margin:0 0 4px;color:#fff}
+p{margin:0;color:#aec3c7;font-size:16px}
+a{color:var(--cy);text-decoration:none;border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--cy)}
+.u{display:block;margin-top:6px;font:13px 'Ubuntu Mono',ui-monospace,monospace;color:var(--mut)}
+footer{margin-top:30px;font-size:14px;color:var(--mut)}
+</style>
+</head>
+<body>
+<main>
+<h1>Hosted on Netlify</h1>
+<p class="lede">The small sites and apps I've built and put live on Netlify. Prototypes and working demos, listed plainly.</p>
+<ul id="list"></ul>
+<footer><a href="../">← All my projects</a></footer>
+</main>
+<script>
+/* Add a site: {t:'Name', d:'One line on what it is', u:'https://…netlify.app'} */
+var S=[
+ {t:'The Chart Room',d:'Admiralty-style nautical charts sold as A2 prints.',u:'https://chart-room-ireland.netlify.app'},
+ {t:'Fax You Up!',d:'Send a fax from your phone in about a minute.'},
+ {t:'WEEEEEE transfer',d:'File transfer with links that never expire, and same-name file replacement.'},
+ {t:'ICEYE public briefing',d:'Public version of the ICEYE company briefing.'},
+ {t:'Catface Tees',d:'Cat-themed graphic tee store.'},
+ {t:'STEUERBOT/88',d:'Prototype that fills prior-year German tax forms for people leaving Germany. Not tax advice.'},
+ {t:'Psyche Mirror',d:'Five-realm self-reflection quiz. For reflection, never diagnosis.'},
+ {t:'Head Hunter',d:'Job-hunt tracker: companies, hiring status, contacts and notes.'}
+];
+document.getElementById('list').innerHTML=S.map(function(x){
+ var t=x.u?'<a href="'+x.u+'" rel="noopener">'+x.t+'</a>':x.t;
+ return '<li><h2>'+t+'</h2><p>'+x.d+'</p>'+(x.u?'<span class="u">'+x.u.replace(/^https?:\/\//,'')+'</span>':'')+'</li>';
+}).join('');
+</script>
+</body>
+</html>
