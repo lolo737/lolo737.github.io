@@ -44,18 +44,6 @@ h1{font-family:'Oswald','Arial Narrow',Impact,sans-serif;font-weight:600;font-si
 .empty{display:none;color:var(--mut);font-family:'JetBrains Mono',monospace;margin:30px 0}
 footer{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);color:var(--mut);font-size:14px}
 footer a{color:var(--cy)}
-
-/* Miami pastels: seven hues, equal lightness, so they sit together */
-.card{--c:#a9c4ff;background:var(--c);border:0;color:#241338;box-shadow:0 6px 0 rgba(0,0,0,.28),0 10px 28px rgba(0,0,0,.35)}
-.card:hover{transform:translateY(-3px);box-shadow:0 9px 0 rgba(0,0,0,.28),0 14px 32px rgba(0,0,0,.4)}
-.card.feat{box-shadow:0 0 0 3px #fff,0 6px 0 3px rgba(0,0,0,.28)}
-.card h2{color:#241338}.card p{color:#3a2a52}
-.card .cat{color:#241338;opacity:.75}
-.card .row a{color:#241338;border:1.5px solid rgba(36,19,56,.45);background:rgba(255,255,255,.3)}
-.card .row a:hover{background:rgba(255,255,255,.65);border-color:#241338}
-.card .row a.live{background:#241338;color:#fff;border-color:#241338}
-.card .when{color:#4a3a62}
-.k-security-awareness{--c:#ffa8c9}.k-web-apps{--c:#8fe3ee}.k-mac-tools{--c:#9ef0cb}.k-explainers{--c:#c9b3ff}.k-eriu{--c:#ffe48f}.k-ai{--c:#ffc4a0}.k-more{--c:#a9c4ff}
 a:focus-visible,button:focus-visible{outline:2px solid var(--am);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
@@ -117,7 +105,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--am);outline-offset:
   var shown=items.filter(function(x){return(state.cat==='All'||x.c===state.cat)&&(!qq||(x.n+' '+x.t+' '+x.d+' '+x.c).toLowerCase().indexOf(qq)>-1)});
   grid.innerHTML=shown.map(function(x){
    var repo='https://github.com/'+USER+'/'+x.n;
-   return'<article class="card k-'+x.c.toLowerCase().replace(/[^a-z0-9]+/g,'-')+(x.f?' feat':'')+'"><div class="cat">'+esc(x.c)+(x.f?' &middot; featured':'')+'</div><h2>'+esc(x.t)+'</h2><p>'+esc(x.d)+'</p><div class="row">'+(x.live?'<a class="live" href="'+esc(x.live)+'">Open</a>':'')+'<a href="'+esc(repo)+'">Code</a><span class="when">'+esc(ago(x.p))+'</span></div></article>'}).join('');
+   return'<article class="card'+(x.f?' feat':'')+'"><div class="cat">'+esc(x.c)+(x.f?' &middot; featured':'')+'</div><h2>'+esc(x.t)+'</h2><p>'+esc(x.d)+'</p><div class="row">'+(x.live?'<a class="live" href="'+esc(x.live)+'">Open</a>':'')+'<a href="'+esc(repo)+'">Code</a><span class="when">'+esc(ago(x.p))+'</span></div></article>'}).join('');
   count.textContent=shown.length+' of '+items.length+' projects';
   empty.style.display=shown.length?'none':'block';
  }
