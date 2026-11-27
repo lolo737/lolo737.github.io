@@ -4,48 +4,110 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Hosted on Netlify</title>
+<title>Hosted on Netlify · Niall O'Hara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#d7e7ea;--mut:#8aa0a6;--line:#1c4850;--cy:#00dbcc}
+:root{--cy:#00dbcc;--am:#ffb81a;--rd:#f54447;--gr:#40ea99;--ink:#d7e7ea;--mut:#8aa0a6;--line:rgba(0,219,204,.22)}
 *{box-sizing:border-box}
-body{margin:0;background:#06141a;color:var(--ink);font:17px/1.6 'Noto Sans',system-ui,sans-serif}
-main{max-width:760px;margin:0 auto;padding:56px 22px 80px}
-h1{font:700 clamp(32px,6vw,48px)/1.1 'Ubuntu',system-ui,sans-serif;margin:0 0 10px;color:#e8f4f6}
-.lede{color:var(--mut);margin:0 0 36px}
-ul{list-style:none;margin:0;padding:0}
-li{border-top:1px solid var(--line);padding:18px 0}
-li:last-child{border-bottom:1px solid var(--line)}
-h2{font:600 19px/1.3 'Ubuntu',system-ui,sans-serif;margin:0 0 4px;color:#fff}
-p{margin:0;color:#aec3c7;font-size:16px}
-a{color:var(--cy);text-decoration:none;border-bottom:1px solid transparent}
-a:hover{border-bottom-color:var(--cy)}
-.u{display:block;margin-top:6px;font:13px 'Ubuntu Mono',ui-monospace,monospace;color:var(--mut)}
-footer{margin-top:30px;font-size:14px;color:var(--mut)}
+html{scroll-behavior:smooth;background:#020809}
+body{margin:0;min-height:100vh;color:var(--ink);font:17px/1.55 'Inter',system-ui,sans-serif;background:radial-gradient(1200px 700px at 15% -10%,#0a3a40 0%,transparent 60%),linear-gradient(180deg,#041a1f 0%,#020809 100%) fixed}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px);z-index:0}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:56px 22px 70px}
+.kick{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--am)}
+h1{font-family:'Oswald','Arial Narrow',Impact,sans-serif;font-weight:600;font-size:clamp(42px,8vw,84px);line-height:1;letter-spacing:.01em;text-transform:uppercase;margin:14px 0 16px;color:#fff;text-shadow:-3px 0 rgba(245,68,71,.8),3px 0 rgba(0,219,204,.8),0 0 30px rgba(0,219,204,.35)}
+.lede{max-width:660px;color:#bcd2d6;font-size:19px;margin:0 0 20px}
+.lede b{color:#fff;font-weight:600}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:34px}
+.links a{font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cy);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.links a:hover{border-color:var(--cy);background:rgba(0,219,204,.08)}
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px}
+.bar input{flex:1 1 240px;min-width:0;background:rgba(0,0,0,.35);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:11px 14px;font:16px 'Inter',sans-serif}
+.bar input:focus{outline:2px solid var(--cy);outline-offset:1px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut);background:transparent;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 13px;cursor:pointer}
+.chip:hover{color:var(--ink)}
+.chip[aria-pressed=true]{color:#021012;background:var(--cy);border-color:var(--cy)}
+.count{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--mut);margin:0 0 14px;letter-spacing:.06em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+.card{position:relative;display:flex;flex-direction:column;background:rgba(2,16,19,.72);border:1.5px solid var(--line);border-radius:14px;padding:20px 20px 16px;transition:border-color .15s,transform .15s}
+.card:hover{border-color:rgba(0,219,204,.6);transform:translateY(-2px)}
+.card.feat{border-color:rgba(255,184,26,.5)}
+.card .cat{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--am);margin-bottom:8px}
+.card h2{margin:0 0 8px;font-family:'Oswald','Arial Narrow',sans-serif;font-weight:500;font-size:24px;line-height:1.15;letter-spacing:.02em;color:#fff;word-break:break-word}
+.card p{margin:0 0 16px;color:#aec3c7;font-size:15.5px;flex:1}
+.card .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-family:'JetBrains Mono',monospace;font-size:12px}
+.card .row a{color:var(--cy);text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:5px 11px;letter-spacing:.06em;text-transform:uppercase}
+.card .row a.live{background:var(--cy);color:#021012;border-color:var(--cy);font-weight:500}
+.card .row a:hover{border-color:var(--cy)}
+.card .when{margin-left:auto;color:var(--mut)}
+.empty{display:none;color:var(--mut);font-family:'JetBrains Mono',monospace;margin:30px 0}
+footer{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);color:var(--mut);font-size:14px}
+footer a{color:var(--cy)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--am);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+<style>
+.dot{border:0;border-top:2px dotted rgba(0,219,204,.45);margin:0}
+.u{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mut);margin:-6px 0 14px;word-break:break-all}
+.card .row a.nolink{border-style:dashed;color:var(--mut);cursor:default}
+.back{display:inline-block;margin-bottom:26px}
 </style>
 </head>
 <body>
-<main>
+<div class="wrap">
+<a class="back chip" href="../" style="text-decoration:none">← All projects</a>
+<div class="kick">Unlisted · quick reference</div>
 <h1>Hosted on Netlify</h1>
-<p class="lede">The small sites and apps I've built and put live on Netlify. Prototypes and working demos, listed plainly.</p>
-<ul id="list"></ul>
-<footer><a href="../">← All my projects</a></footer>
-</main>
-<script>
-/* Add a site: {t:'Name', d:'One line on what it is', u:'https://…netlify.app'} */
-var S=[
- {t:'The Chart Room',d:'Admiralty-style nautical charts sold as A2 prints.',u:'https://chart-room-ireland.netlify.app'},
- {t:'Fax You Up!',d:'Send a fax from your phone in about a minute.'},
- {t:'WEEEEEE transfer',d:'File transfer with links that never expire, and same-name file replacement.'},
- {t:'ICEYE public briefing',d:'Public version of the ICEYE company briefing.'},
- {t:'Catface Tees',d:'Cat-themed graphic tee store.'},
- {t:'STEUERBOT/88',d:'Prototype that fills prior-year German tax forms for people leaving Germany. Not tax advice.'},
- {t:'Psyche Mirror',d:'Five-realm self-reflection quiz. For reflection, never diagnosis.'},
- {t:'Head Hunter',d:'Job-hunt tracker: companies, hiring status, contacts and notes.'}
-];
-document.getElementById('list').innerHTML=S.map(function(x){
- var t=x.u?'<a href="'+x.u+'" rel="noopener">'+x.t+'</a>':x.t;
- return '<li><h2>'+t+'</h2><p>'+x.d+'</p>'+(x.u?'<span class="u">'+x.u.replace(/^https?:\/\//,'')+'</span>':'')+'</li>';
-}).join('');
+<p class="lede">The small sites and apps I've put live on Netlify. Working demos and real shops, listed plainly.</p>
+<div class="grid">
+<article class="card"><div class="cat">Web apps</div><h2>The Chart Room</h2><p>Admiralty-style nautical charts of Irish waters, sold as A2 prints. Stripe checkout and a hidden admin area.</p><div class="u">chart-room-ireland.netlify.app</div><div class="row"><a class="live" href="https://chart-room-ireland.netlify.app" rel="noopener">Open</a></div></article>
+<article class="card"><div class="cat">Web apps</div><h2>Fax You Up!</h2><p>Send a fax from your phone in about a minute. Stripe payments, Telnyx faxing, one-click cancel.</p><div class="u">faxyouup.netlify.app</div><div class="row"><a class="live" href="https://faxyouup.netlify.app" rel="noopener">Open</a></div></article>
+<article class="card"><div class="cat">Web apps</div><h2>Catface Tees</h2><p>Cat-themed graphic tee store with Stripe checkout and an admin dashboard.</p><div class="u">catfacetees.com</div><div class="row"><a class="live" href="https://catfacetees.com" rel="noopener">Open</a></div></article>
+<article class="card"><div class="cat">Web apps</div><h2>STEUERBOT/88</h2><p>Prototype that fills prior-year German tax forms for people leaving Germany. Designed in Figma Make. Not tax advice.</p><div class="u">www.figma.com/make/MCFRqP34Lzudc8cCvukwbT/MVP-Planning-for-Tax-App</div><div class="row"><a class="live" href="https://www.figma.com/make/MCFRqP34Lzudc8cCvukwbT/MVP-Planning-for-Tax-App?t=TncSnLbIKWu1CQJ6-20&fullscreen=1" rel="noopener">Open</a></div></article>
+<article class="card"><div class="cat">Web apps</div><h2>WEEEEEE transfer</h2><p>File transfer whose links never expire. Re-upload a file with the same name and the link updates.</p><div class="row"><a class="nolink">Link to come</a></div></article>
+<article class="card"><div class="cat">Web apps</div><h2>Psyche Mirror</h2><p>Candlelit five-realm self-reflection quiz. For reflection, never diagnosis.</p><div class="row"><a class="nolink">Link to come</a></div></article>
+<article class="card"><div class="cat">Web apps</div><h2>Head Hunter</h2><p>Job-hunt tracker: companies, hiring status, best contact and notes.</p><div class="row"><a class="nolink">Link to come</a></div></article>
+<article class="card"><div class="cat">Briefings</div><h2>ICEYE public briefing</h2><p>Public, plain-English briefing on the satellite company ICEYE, built from public sources.</p><div class="row"><a class="nolink">Link to come</a></div></article>
+</div>
+<footer>Unlisted page. Not linked from search engines.</footer>
+</div>
+<script>/* Eriu briefings: TikTok-style RGB-split glitch on headlines.
+   Self-contained: injects its own CSS, wraps heading text, no changes to the page layout.
+   Respects prefers-reduced-motion (static colour split only). */
+(function () {
+  if (window.__eriuGlitch) return; window.__eriuGlitch = true;
+  var css = [
+    '.gl{position:relative;display:inline-block;max-width:100%;vertical-align:top;isolation:isolate;',
+    'text-shadow:0 0 7px rgba(0,219,204,.42),0 0 22px rgba(0,219,204,.18);animation:gl-current 3.8s infinite steps(1,end)}',
+    '.gl::before,.gl::after{content:attr(data-glitch);position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:hidden;white-space:inherit}',
+    '.gl::before{color:#00f6ff;text-shadow:2px 0 #00f6ff,-2px 0 #ff2bd6;clip-path:inset(0 0 68% 0);transform:translateX(-2px);opacity:.78;animation:gl-a 2.7s infinite steps(1,end)}',
+    '.gl::after{color:#ff36c9;text-shadow:2px 0 #ff36c9,-2px 0 #00eaff;clip-path:inset(72% 0 0 0);transform:translateX(2px);opacity:.72;animation:gl-b 3.1s infinite steps(1,end)}',
+    '@keyframes gl-current{0%,88%,91%,94%,100%{text-shadow:0 0 7px rgba(0,219,204,.42),0 0 22px rgba(0,219,204,.18)}89%{text-shadow:3px 0 #00f6ff,-3px 0 #ff2bd6,0 0 18px #00eaff}90%{text-shadow:-2px 0 #00f6ff,2px 0 #ff2bd6,0 0 25px #ff2bd6}92%{text-shadow:0 0 5px #00f6ff,0 0 30px #00f6ff,0 0 42px rgba(255,43,214,.55)}}',
+    '@keyframes gl-a{0%,82%,86%,100%{clip-path:inset(0 0 68% 0);transform:translateX(-2px);opacity:.68}83%{clip-path:inset(18% 0 55% 0);transform:translateX(7px);opacity:1}84%{clip-path:inset(4% 0 76% 0);transform:translateX(-6px);opacity:.95}85%{clip-path:inset(35% 0 42% 0);transform:translateX(5px);opacity:1}}',
+    '@keyframes gl-b{0%,74%,79%,100%{clip-path:inset(72% 0 0 0);transform:translateX(2px);opacity:.62}75%{clip-path:inset(48% 0 24% 0);transform:translateX(-7px);opacity:1}76%{clip-path:inset(66% 0 8% 0);transform:translateX(6px);opacity:.95}77%{clip-path:inset(22% 0 58% 0);transform:translateX(-4px);opacity:1}78%{clip-path:inset(80% 0 0 0);transform:translateX(8px);opacity:.9}}',
+    '@media (prefers-reduced-motion:reduce){.gl,.gl::before,.gl::after{animation:none}}'
+  ].join('');
+  function wrap(h) {
+    if (!h || h.querySelector('.gl') || h.closest('.card')) return;
+    var kids = Array.prototype.slice.call(h.childNodes).filter(function (n) {
+      return !(n.nodeType === 1 && n.classList.contains('num'));
+    });
+    var text = kids.map(function (n) { return n.textContent; }).join('').replace(/\s+/g, ' ').trim();
+    if (!text) return;
+    var span = document.createElement('span');
+    span.className = 'gl'; span.setAttribute('data-glitch', text);
+    kids.forEach(function (n) { span.appendChild(n); });
+    h.appendChild(span);
+  }
+  function run() {
+    var st = document.createElement('style'); st.id = 'eriu-glitch-css'; st.textContent = css;
+    document.head.appendChild(st);
+    var list = document.querySelectorAll('h1');
+    Array.prototype.forEach.call(list, wrap);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+})();
 </script>
 </body>
 </html>
