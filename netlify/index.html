@@ -52,6 +52,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--am);outline-offset:
 .u{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mut);margin:-6px 0 14px;word-break:break-all}
 .card .row a.nolink{border-style:dashed;color:var(--mut);cursor:default}
 .back{display:inline-block;margin-bottom:26px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.foot .back{margin:0 0 0 auto}
 </style>
 </head>
 <body>
@@ -71,7 +73,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--am);outline-offset:
 <article class="card"><div class="cat">Web apps</div><h2>Head Hunter</h2><p>Job-hunt tracker: companies, hiring status, best contact and notes.</p><div class="u">claude.ai/artifact/9RECPGcJAFeX8xp5K5wJ2D</div><div class="row"><a class="live" href="https://claude.ai/artifact/9RECPGcJAFeX8xp5K5wJ2D" rel="noopener">Open</a></div></article>
 <article class="card"><div class="cat">Briefings</div><h2>ICEYE public briefing</h2><p>Unofficial, plain-English summary of public information about ICEYE and its radar satellites.</p><div class="u">iceye-public.netlify.app</div><div class="row"><a class="live" href="https://iceye-public.netlify.app" rel="noopener">Open</a></div></article>
 </div>
-<footer>Unlisted page. Not linked from search engines.</footer>
+<footer class="foot"><span>Unlisted page. Not linked from search engines.</span><a class="back chip" href="../" style="text-decoration:none">← All projects</a></footer>
 </div>
 <script>/* Eriu briefings: TikTok-style RGB-split glitch on headlines.
    Self-contained: injects its own CSS, wraps heading text, no changes to the page layout.
